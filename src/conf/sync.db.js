@@ -1,4 +1,4 @@
-const sequelize = require('./sequelize.config');
+const sequelize = require('./sequelize.conf');
 
 // Synchroniser le modèle avec la base de données
 sequelize.sync({alter:true})

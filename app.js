@@ -1,15 +1,13 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const connectDB = require("./src/conf/db.conf");
 const port = process.env.PORT;
-require('./src/config/sync');
-
+require('./src/conf/sync.db');
+const productRoutes = require("./src/product.routes");
 
 //Configuration de express
 app.use(express.json());
-
-//Routes
+app.use("/products", productRoutes);
 
 
 app.listen(port, ()=>{
