@@ -31,8 +31,10 @@ class Product {
 
 [Lien vers la doc Postman et les tests](https://documenter.getpostman.com/view/25420143/2sA35D43Q2).
 
+## Description de la relation Products
 ![Description de la relation product dans la base de donnée](description.png)
 
+## Liste des produits dans Products
 ![La relation product avec quelques champs](./liste.png)
 
 Pour lancer l'application, utilisez la commande 'node app.js'. 
