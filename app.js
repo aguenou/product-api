@@ -3,8 +3,8 @@ const app = express();
 require("dotenv").config();
 const connectDB = require("./src/conf/db.conf");
 const port = process.env.PORT;
-//Connexion à la base de données
-connectDB();
+require('./src/config/sync');
+
 
 //Configuration de express
 app.use(express.json());

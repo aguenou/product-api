@@ -1,52 +1,49 @@
-const mongoose = require("mongoose");
+const { DataTypes } = require('sequelize');
+const sequelize = require('../src/conf/sequelize.conf');
 
-const productModel = new mongoose.Schema(
-    {
-        id: {
-            type: Number,
-            unique: true,
-            required: true
-        },
-        code: {
-            type: String, 
-            required: true
-        },
-        name: {
-            type: String, 
-            required: true
-        },
-        description: {
-            type: String, 
-            required: true
-        },
-        price: {
-            type: Number, 
-            required: true
-        },
-        quantity: {
-            type: Number, 
-            required: true
-        },
-        inventoryStatus: {
-            type: String, 
-            required: true
-        },
-        category: {
-            type: String, 
-            required: true
-        },
-        image: {
-            type: String, 
-            required: false
-        },
-        rating: {
-            type: Number, 
-            required: false
-        }
+const productModel = sequelize.define('Product', {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey:true,
     },
-    {
-        timestamps:true,
+    code: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    description: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    price: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    quantity: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+    },
+    inventoryStatus: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    category: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    image: {
+        type: DataTypes.STRING,
+        allowNull: true,
+    },
+    rating: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
     }
-);
+}, {
+  timestamps: false
+});
 
-module.exports = mongoose.model("Product", productSchema);
+module.exports = productModel;
