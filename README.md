@@ -1,13 +1,11 @@
 # Back-end
 
-Développer un back-end permettant la gestion de produits définis plus bas. Vous pouvez utiliser la technologie de votre choix parmis la list suivante :
+Back-end permettant la gestion de produits définis plus bas.
 
-- nodejs/express
-- Java/Spring Boot
-- C#/.net Core
-- Python/Flask
+  - Technologie: nodejs/express
+  - SGBD: Postgresql
 
-Le back-end doit gérer les API REST suivantes : 
+Le back-end gère les API REST suivantes : 
 
 | Resource           | POST                  | GET                            | PATCH                                    | PUT | DELETE           |
 | ------------------ | --------------------- | ------------------------------ | ---------------------------------------- | --- | ---------------- |
@@ -31,14 +29,12 @@ class Product {
 }
 ```
 
-Le back-end créé doit pouvoir gérer les produits dans une base de données SQL/NoSQL ou dans un fichier json.
+[Lien vers la doc Postman et les tests](https://documenter.getpostman.com/view/25420143/2sA35D43Q2).
 
-Une liste de produits est disponible dans ce fichier : `front/assets/products.json`
+![Description de la relation product dans la base de donnée](description.png)
 
-Un front-end en Angular est disponible et permet d'utiliser l'API via cette adresse : `http://localhost:3000`
+![La relation product avec quelques champs](./liste.png)
 
-vous pouvez lancer le front-end angular avec la commande 'ng serve'
+Pour lancer l'application, utilisez la commande 'node app.js'. 
+Installez les dépendances nécessaires pour le projet avec 'npm install' 
 
-# Bonus
-
-Vous pouvez ajouter des tests Postman ou Swagger pour valider votre API

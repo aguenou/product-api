@@ -45,7 +45,7 @@ const getProductById = async (req, res) =>{
 const updateProduct = async (req, res) =>{
     try{
         const product = await Product.update(req.body,{where: {id:req.params.id}});
-        res.status(200).json({message:`Le produit ${product.id} a été modifié! `});
+        res.status(200).json({message:`Le produit a été modifié! `});
     }catch(error){
         if (error.name === 'SequelizeValidationError') {
             res.status(400).json({ error: error.message });
@@ -57,8 +57,8 @@ const updateProduct = async (req, res) =>{
 
 const deleteProduct = async(req, res) =>{
     try{
-        const product = await Auteur.destroy({where: {id:req.params.id}});
-        res.status(200).json({message:`Le produit ${produit.id} a été supprimé! `});
+        const product = await Product.destroy({where: {id:req.params.id}});
+        res.status(200).json({message:`Le produit a été supprimé! `});
     }catch (error){
         if (error.name === 'SequelizeValidationError') {
             res.status(400).json({ error: error.message });
